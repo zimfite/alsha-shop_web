@@ -1,0 +1,206 @@
+﻿@page
+@model WebApplication1.Pages.ProfileModel
+@{
+    ViewBag.Title = "Профиль";
+}
+<div id="unavailableModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Внимание</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Эта функция временно недоступна. Мы работаем над ее добавлением.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary close-modal">Понятно</button>
+        </div>
+    </div>
+</div>
+
+<div id="addressModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Адреса доставки</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="addressList">
+                <div class="address-item">
+                    <p><strong>Домашний адрес</strong></p>
+                    <p>г. Москва, ул. Примерная, д. 10, кв. 25</p>
+                    <div class="address-actions">
+                        <button class="btn-edit">Изменить</button>
+                        <button class="btn-delete">Удалить</button>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <p><strong>Работа</strong></p>
+                    <p>г. Москва, ул. Рабочая, д. 5, оф. 304</p>
+                    <div class="address-actions">
+                        <button class="btn-edit">Изменить</button>
+                        <button class="btn-delete">Удалить</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="addAddressBtn" class="btn btn-secondary add-address-btn">
+                Добавить новый адрес
+            </button>
+
+            <div id="addressForm" class="address-form">
+                <h3>Новый адрес</h3>
+                <form id="newAddressForm">
+                    <input type="text" placeholder="Город" class="form-input" required>
+                    <input type="text" placeholder="Улица" class="form-input" required>
+                    <input type="text" placeholder="Дом" class="form-input" required>
+                    <input type="text" placeholder="Квартира" class="form-input">
+                    <input type="text" placeholder="Название адреса (например: Дом, Работа)" class="form-input">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Сохранить адрес</button>
+                        <button type="button" id="cancelAddressBtn" class="btn btn-secondary">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="promoModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Промокоды</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="promoForm" class="promo-form">
+                <div class="promo-input-group">
+                    <input type="text" id="promoCode" placeholder="Введите промокод" class="promo-input" required>
+                    <button type="submit" class="btn btn-primary">Применить</button>
+                </div>
+            </form>
+
+            <div id="promoList" class="promo-list">
+                <h3>Активные промокоды</h3>
+                <div class="promo-item">
+                    <div class="promo-info">
+                        <p><strong>SALE2025</strong> - Скидка 10% на все товары</p>
+                        <p class="promo-date">Действует до: 31.12.2025</p>
+                    </div>
+                    <span class="promo-status active">Активен</span>
+                </div>
+                <div class="promo-item">
+                    <div class="promo-info">
+                        <p><strong>FREE18</strong> - Бесплатная доставка от 2000₽</p>
+                        <p class="promo-date">Действует до: 15.01.2026</p>
+                    </div>
+                    <span class="promo-status active">Активен</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="profile-section">
+    <div class="profile-container">
+        <div class="profile-left">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg" alt="Фото профиля" class="profile-photo">
+                    <div class="profile-details">
+                        <h2 class="profile-name">Пользователь</h2>
+                        <div class="profile-contacts">
+                            <p class="profile-phone">+7(999)888-77-66</p>
+                            <p class="profile-email">fjb***nfj@@jnc.com</p>
+                        </div>
+                    </div>
+                    <button class="profile-expand-btn">
+                        <img src="/img/profile/maximize.svg" alt="Развернуть">
+                    </button>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="profile-action-btn" id="paymentMethodsBtn">
+                        <img src="/img/profile/card.svg" alt="Оплата">
+                        <span>Способы оплаты</span>
+                    </button>
+                    <button class="profile-action-btn" id="addressBtn">
+                        <img src="/img/profile/map-point.svg" alt="Адрес">
+                        <span>Адрес для доставки</span>
+                    </button>
+                </div>
+
+                <div class="profile-secondary-actions">
+                    <button class="secondary-action-btn">
+                        <img src="/img/profile/bonus.svg" alt="Бонусы">
+                        <span>Бонусы</span>
+                    </button>
+                    <button class="secondary-action-btn" id="promoCodesBtn">
+                        <img src="/img/profile/promo-code.svg" alt="Промокоды">
+                        <span>Промокоды</span>
+                    </button>
+                    <button class="secondary-action-btn">
+                        <img src="/img/profile/settings.svg" alt="Настройки">
+                        <span>Настройки</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-right">
+            <div class="profile-quick-links">
+                <a href="Favourites" class="quick-link">
+                    <div class="quick-link-content">
+                        <div class="quick-link-header">
+                            <img src="/img/header/star.svg" alt="Избранное">
+                            <h3>Избранное</h3>
+                        </div>
+                        <p class="quick-link-count">256 товаров</p>
+                    </div>
+                </a>
+                <a href="Basket" class="quick-link">
+                    <div class="quick-link-content">
+                        <div class="quick-link-header">
+                            <img src="/img/header/basket.svg" alt="Корзина">
+                            <h3>Корзина</h3>
+                        </div>
+                        <p class="quick-link-count">25 товаров</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="profile-bottom-section">
+                
+
+                <div class="additional-links">
+                    <div class="link-group">
+                        <button class="additional-link">
+                            <img src="/img/profile/history.svg" alt="История">
+                            <span>История просмотра</span>
+                        </button>
+                        <a href="Orders" class="additional-link">
+                            <img src="/img/profile/orders.svg" alt="Заказы">
+                            <span>Заказы</span>
+                        </a>
+                    </div>
+                    <div class="link-group">
+                        <button class="additional-link">
+                            <img src="/img/profile/purchases.svg" alt="Покупки">
+                            <span>Покупки</span>
+                        </button>
+                        <button class="additional-link">
+                            <img src="/img/profile/refunds.svg" alt="Возвраты">
+                            <span>Возвраты</span>
+                        </button>
+                    </div>
+                </div>
+                <a href="https://t.me/o_lllu3a_o" class="support-link">
+                    <div class="support-content">
+                        <img src="/img/profile/support.svg" alt="Поддержка">
+                        <span>Поддержка</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

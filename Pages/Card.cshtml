@@ -1,0 +1,62 @@
+﻿@page
+@model WebApplication1.Pages.CardModel
+@{
+    ViewBag.Title = "Товар";
+}
+<section>
+    <div class="above">
+        <div class="img-product_Card">
+            <div class="img-product">
+                <div class="mini-img">
+                    @for (int i = 0; i < 3; i++)
+                    {
+                        <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg"/>
+                    }
+                </div>
+                <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg" class="selected" />
+            </div>
+            <div class="feedback">
+                <button><img src="/img/body/comment.svg"/>Отзывы (103)</button>
+            </div>
+        </div>
+        <div class="text-specifications">
+            <h3>New lolтоормпрлл</h3>
+            <h5><img src="/img/body/heart.svg"/> 2,7</h5>
+            <h4>Бренд: lolkin</h4>
+            <h4>Категория: Человек</h4>
+            <h4>Материал: ткани|органы</h4>
+            <h4>Цвет: бежевый</h4>
+            <h4>Количество: 1 шт.</h4>
+            <h4>Страна-изготовитель: Россия</h4>
+            <a href="#all">Все характеристики ></a>
+        </div>
+        <div class="interaction">
+            <div class="interaction_with_product">
+                <h2>4.999 $</h2>
+                <div class="departure_buttons">
+                    <button>В корзину</button>
+                    <button>В избранное</button>
+                </div>
+            </div>
+            <div class="brenda">
+                <img src="/img/card/shop.svg"/>
+                <h3>lolkin</h3>
+                @* <h5>'оценка продавца'</h5> *@
+            </div>
+        </div>
+    </div>
+    <div class="below">
+        <h2 name="all">Полные характеристики</h2>
+        <h3>Описание: jdjnvjndjkdvjkdvkjdvkkd</h3>
+        <h3>Бренд: lolkin</h3>
+        <h3>Категория: Человек</h3>
+        <h3>Материал: ткани|органы</h3>
+        <h3>Цвет: бежевый</h3>
+        <h3>Количество: 1 шт.</h3>
+        <h3>Страна-изготовитель: Россия</h3>
+        @* if (характеристика != null)
+        {
+            
+        } *@
+    </div>
+</section>

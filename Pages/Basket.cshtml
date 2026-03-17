@@ -1,0 +1,113 @@
+﻿@page
+@model WebApplication1.Pages.BasketModel
+@{
+    ViewBag.Title = "Корзина";
+}
+
+<div id="addressModalBasket" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Адрес доставки</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div id="addressListBasket">
+                <div class="address-item">
+                    <p><strong>Домашний адрес</strong></p>
+                    <p>г. Москва, ул. Примерная, д. 10, кв. 25</p>
+                    <div class="address-actions">
+                        <button class="btn-edit">Изменить</button>
+                        <button class="btn-delete">Удалить</button>
+                    </div>
+                </div>
+                <div class="address-item">
+                    <p><strong>Работа</strong></p>
+                    <p>г. Москва, ул. Рабочая, д. 5, оф. 304</p>
+                    <div class="address-actions">
+                        <button class="btn-edit">Изменить</button>
+                        <button class="btn-delete">Удалить</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="addAddressBtnBasket" class="btn btn-secondary add-address-btn">
+                Добавить новый адрес
+            </button>
+
+            <div id="addressFormBasket" class="address-form">
+                <h3>Новый адрес</h3>
+                <form id="newAddressFormBasket">
+                    <input type="text" placeholder="Город" class="form-input" required>
+                    <input type="text" placeholder="Улица" class="form-input" required>
+                    <input type="text" placeholder="Дом" class="form-input" required>
+                    <input type="text" placeholder="Квартира" class="form-input">
+                    <input type="text" placeholder="Название адреса (например: Дом, Работа)" class="form-input">
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Сохранить адрес</button>
+                        <button type="button" id="cancelAddressBtnBasket" class="btn btn-secondary">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="unavailableModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Внимание</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p>Эта функция временно недоступна. Мы работаем над ее добавлением.</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary close-modal">Понятно</button>
+        </div>
+    </div>
+</div>
+
+<section class="sectionBasket">
+    <div class="products-main">
+        <div class="subheaderBasket">
+            <a href="Basket" class="basket active">Корзина</a>
+            <a href="Orders" class="basket">Заказы</a>
+        </div>
+        <div class="products-containerBasket">
+            <div class="all">
+                <input type="checkbox" />
+                <h4>Выбрать все</h4>
+            </div>
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="cardBasket">
+                    <div class="ProductPhotoBasket">
+                        <input type="checkbox" class="choice" />
+                        <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg" alt="" id="PhotoBasket">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="nameProduct">New lolтоормпрлл</h3>
+                        <div class="count">
+                            <button class="editCount">-</button>
+                            <h3>3</h3>
+                            <button class="editCount">+</button>
+                            <button class="del">
+                                <img src="/img/basket/delete-o-svgrepo-com.svg" />
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="costBasket">2.499 $</h3>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="details">
+        <div class="details-buttons">
+            <button id="addressBtnBasket">Адрес доставки <img src="/img/basket/edit.svg" /></button>
+            <button id="paymentBtnBasket">Способ оплаты <img src="/img/basket/edit.svg" /></button>
+        </div>
+        <div class="details-info">
+            <h3>Количество товаров: 3 шт.</h3>
+            <h2>Итого: 30.000 $</h2>
+        </div>
+    </div>
+</section>

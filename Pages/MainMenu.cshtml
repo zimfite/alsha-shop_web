@@ -1,0 +1,42 @@
+﻿@page
+@model WebApplication1.Pages.MainMenuModel
+@{
+    ViewBag.Title = "Главное меню";
+}
+<section class="sectionINmenu">
+    <div class="cards-container">
+        @if (Model.ProductCards.Any())
+        {
+            @foreach (var product in Model.ProductCards)
+            {
+                <a href="Card?id=@product.id" class="card">
+                    <div class="ProductPhoto">
+                        @if (!string.IsNullOrEmpty(product.imageurl))
+                        {
+                            <img src="@product.imageurl" alt="@product.productname" id="Photo">
+                        }
+                        else
+                        {
+                            <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg" alt="@product.productname" id="Photo">
+                        }
+                        <img src="img\body\star-svgrepo-com.svg" alt="" id="favourites">
+                    </div>
+                    <div class="Text">
+                        <h3 class="cost">@product.price.ToString("N2") $</h3>
+                        <h3 class="name">@product.productname</h3>
+                        <div class="reviews">
+                            <img src="img\body\heart.svg" alt="" class="reviews_card_heart">
+                            <h5 class="text_reviews_card">@(Math.Round(product.averagerating, 1))</h5>
+                            <img src="img\body\comment.svg" alt="" class="reviews_card_comment">
+                            <h5 class="text_reviews_card">@product.reviewcount</h5>
+                        </div>
+                    </div>
+                </a>
+            }
+        }
+        else
+        {
+            <p>Товары не найдены</p>
+        }
+    </div>
+</section>

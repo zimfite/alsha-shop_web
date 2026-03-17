@@ -1,0 +1,103 @@
+﻿@page
+@model WebApplication1.Pages.FavouritesModel
+@{
+    ViewBag.Title = "Избранное";
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["InfoMessage"] != null)
+{
+    <div class="alert alert-info">
+        @TempData["InfoMessage"]
+    </div>
+}
+
+<section class="favorites-section">
+    <div class="subheader">
+        @if (Model.IsUserAuthenticated && Model.HasFavorites)
+        {
+            <select class="sort" id="sortSelect">
+                <option value="newest">По дате добавления (новые)</option>
+                <option value="oldest">По дате добавления (старые)</option>
+                <option value="price_high">По цене (дорогие)</option>
+                <option value="price_low">По цене (дешевые)</option>
+                <option value="rating_high">По рейтингу (высокий)</option>
+                <option value="rating_low">По рейтингу (низкий)</option>
+            </select>
+        }
+    </div>
+
+    @if (!Model.IsUserAuthenticated)
+    {
+        <div class="empty-state">
+            <h2 class="empty-title">Пока нет избранных товаров</h2>
+            <p class="empty-text">Добавляйте товары в избранное, нажимая на значок ★</p>
+        </div>
+    }
+    else if (Model.HasFavorites)
+    {
+        <div class="cards-container">
+            @foreach (var product in Model.ProductFavorites)
+            {
+                <div class="card_fav favorite-item"
+                     data-product-id="@product.Id"
+                     data-added-date="@(((DateTime)product.AddedToFavouritesDate).ToString("yyyy-MM-dd"))"
+                     data-price="@product.Price"
+                     data-rating="@product.AverageRating">
+
+                    <a href="Card?id=@product.Id" class="card-link">
+                        <div class="ProductPhoto">
+                            @if (!string.IsNullOrEmpty(product.ImageUrl))
+                            {
+                                <img src="@product.ImageUrl" alt="@product.ProductName" id="Photo">
+                            }
+                            else
+                            {
+                                <img src="https://themes.muffingroup.com/be/event6/wp-content/uploads/2021/04/event6-ourteam-pic5.jpg" alt="@product.ProductName" id="Photo">
+                            }
+                            <img src="img\body\star-svgrepo-com.svg" alt="В избранном" id="favourites">
+                        </div>
+                    </a>
+
+                    <div class="Text">
+                        <h3 class="cost">@product.Price.ToString("N2") $</h3>
+                        <h3 class="name">@product.ProductName</h3>
+                        <div class="reviews">
+                            <img src="img\body\heart.svg" alt="" class="reviews_card_heart">
+                            <h5 class="text_reviews_card">@(Math.Round(product.AverageRating, 1))</h5>
+                            <img src="img\body\comment.svg" alt="" class="reviews_card_comment">
+                            <h5 class="text_reviews_card">@product.ReviewCount</h5>
+                        </div>
+                        <button class="cart-btn" data-product-id="@product.Id" onclick="addToFavCart(@product.Id, event)">
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @if (Model.ProductFavorites.Count >= 15)
+        {
+            <div class="load-more-area">
+                <button class="more-btn" id="loadMoreBtn">Ещё товары</button>
+                <div class="page-counter">
+                    <span class="current-page">@Model.CurrentPage</span>
+                    <span class="total-pages">из @Model.TotalPages</span>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="empty-state">
+            <h2 class="empty-title">Пока нет избранных товаров</h2>
+            <p class="empty-text">Добавляйте товары в избранное, нажимая на значок ★</p>
+        </div>
+    }
+</section>

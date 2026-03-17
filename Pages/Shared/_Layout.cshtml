@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/css/Header.css">
+    <link rel="stylesheet" href="/css/Profile.css">
+    <link rel="stylesheet" href="/css/MainMenu.css">
+    <link rel="stylesheet" href="/css/Favourites.css">
+    <link rel="stylesheet" href="/css/Basket.css">
+    <link rel="stylesheet" href="/css/Orders.css">
+    <link rel="stylesheet" href="/css/Card.css">
+</head>
+<body>
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Форма регистрации</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="accountForm" class="account-form">
+                    <form id="newAccountForm">
+                        <input type="text" placeholder="Фамилия*" class="form-input" required id="regLastName">
+                        <input type="text" placeholder="Имя*" class="form-input" required id="regFirstName">
+                        <input type="text" placeholder="Отчество" class="form-input" id="regMiddleName">
+                        <input type="tel" placeholder="Номер телефона*" class="form-input" required id="regPhone">
+                        <input type="email" placeholder="Email" class="form-input" id="regEmail">
+                        <select class="form-input" id="regGender">
+                            <option value="" disabled selected hidden>Пол</option>
+                            <option value="0">Не указывать</option>
+                            <option value="1">Женщина</option>
+                            <option value="2">Мужчина</option>
+                        </select>
+                        <input type="password" placeholder="Придумайте пароль*" class="form-input" required id="regPassword">
+                        <input type="password" placeholder="Повторите пароль*" class="form-input" required id="regConfirmPassword">
+                        <div id="accept"><input type="checkbox" id="privacyCheckbox"/> <a href="https://legal.max.ru/pp">Принимаете политику конфиденциальности?</a></div>
+                    </form>
+                    <div class="form-actions">
+                        <button id="switchToLoginBtn" class="btn btn-secondary entrance-btn">
+                            Вход
+                        </button>
+                        <button id="registerBtn" class="btn btn-secondary add-user-btn">
+                            Зарегистрироваться
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Войти в аккаунт</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="accountForm" class="account-form">
+                    <form id="loginForm">
+                        <input type="tel" placeholder="Номер телефона*" class="form-input" required id="loginPhone">
+                        <input type="password" placeholder="Ваш пароль" class="form-input" required id="loginPassword">
+                        <div style="margin: 10px 0;">
+                            <a href="#" id="switchToRegisterBtn">Нет аккаунта? Зарегистрироваться</a>
+                        </div>
+                    </form>
+                    <div class="form-actions">
+                        <button id="loginBtn" class="btn btn-secondary entrance-btn">
+                            Вход
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <a href="MainMenu" id="nameAshop">
+            AL<font color="red">&#8242;</font>SHA
+        </a>
+        <div class="search">
+            <img src="/img/header/search-no-results.svg" alt="" id="loupe">
+            <input type="text" placeholder="Поиск" class="input">
+        </div>
+        <div class="functions">
+            <button>
+                <img src="/img/header/menu.svg" alt="" class="header">
+            </button>
+            <a href="Favourites">
+                <img src="/img/header/star.svg" alt="star icon" class="header">
+            </a>
+            <a href="Basket">
+                <img src="/img/header/basket.svg" alt="" class="header">
+            </a>
+            @if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <a href="Profile" class="account-action-btn" id="accountBtn">
+                    <img src="/img/header/check-profile.svg" alt="Профиль" class="header">
+                </a>
+            }
+            else
+            {
+                <button class="account-action-btn" id="accountBtn">
+                    <img src="/img/header/profile.svg" alt="Войти" class="header">
+                </button>
+            }
+        </div>
+    </header>
+
+    <main>
+        <div> @RenderBody()</div>
+    </main>
+
+    <footer>
+        <h2><font color="white">AL<font color="red">&#8242;</font>SHA</font></h2>
+        <div class="we_in_social_network">
+            <h3>Мы в соц-сетях:</h3>
+            <div class="social_network">
+                <a href="https://vk.com/o_lllu3a_o">
+                    <img src="/img/header/vk.svg" class="footer" />
+                    ВКонтакте
+                </a>
+                <a href="https://t.me/o_lllu3a_o">
+                    <img src="/img/header/telegram.svg" class="footer" />
+                    Telegram
+                </a>
+                <a href="https://wa.me/79670023206">
+                    <img src="/img/header/whatsapp.svg" class="footer" />
+                    WhatsApp
+                </a>
+                <a href="https://github.com/zimfite">
+                    <img src="/img/header/github.svg" class="footer" />
+                    GitHub
+                </a>
+            </div>
+        </div>
+        <div class="contact_with_us">
+            <h3>Связь с нами:</h3>
+            <div class="contact">
+                <a href="#">
+                    <img src="/img/header/email.svg" class="footer" />
+                    katy2007dv@@gmail.com
+                </a>
+                <a href="#">
+                    <img src="/img/header/phone.svg" class="footer" />
+                    +7(967)002-32-06
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="\js\profile.js"></script>
+</body>
+</html>
+
+
