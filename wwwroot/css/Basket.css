@@ -1,0 +1,225 @@
+.sectionBasket {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.subheaderBasket {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.all h4 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.subheaderBasket * {
+    font-size: 28px;
+    cursor: pointer;
+    color: black;
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 10px 20px;
+}
+
+.subheaderBasket a.active {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+#PhotoBasket, .ProductPhotoBasket {
+    height: 120px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.choice {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+}
+
+.cardBasket {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.cardBasket .product-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.nameProduct {
+    margin: 0 0 15px 0;
+    font-size: 17px;
+    font-weight: normal;
+    display: block;
+}
+
+.count {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.editCount, .count h3 {
+    height: 27px;
+    width: 27px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+}
+
+.editCount {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4; 
+    border-radius: 2.5px;
+    font-size: 20px;
+}
+
+.del img, .del {
+    border: none;
+    margin: 0;
+    padding: 0;
+    height: 26px;
+    width: 26px;
+    background-color: white;
+}
+.del {
+    margin: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.costBasket {
+    position: absolute;
+    right: 75px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    color: black;
+}
+
+.products-main {
+    flex: 1;
+    width: 70%;
+}
+
+.products-containerBasket {
+    width: 100%;
+}
+
+.products-containerBasket > div:first-child {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.products-containerBasket > div:first-child input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.details {
+    width: 30%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.details-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.details button {
+    text-align: left;
+    height: 30px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ffefef 0%, #f6d6d6 100%);
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.details button:hover {
+    background-color: rgb(199 199 199);
+}
+
+.details button img{
+    height: 20px; width: 20px;
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+.details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.details h3, .details h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.details h3 {
+    font-size: 18px;
+    color: #4d4d4d;
+    font-weight: normal;
+}
+
+.details h2 {
+    font-size: 24px;
+    color: rgb(168, 0, 0);
+    font-weight: bold;
+}

@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    background-color: white;
+    box-shadow: 0 1px 15px 1px rgba(255, 0, 0, 0.158);
+}
+
+hr {
+    margin-top: 0;
+}
+
+header * {
+    width: 100%;
+}
+
+/*main {
+    height: 0;
+}*/
+
+#nameAshop, .search *
+#catalog, #basket, 
+#profile {
+    margin: 0 0 0 10px;
+    padding: 0 0 0 10px;
+}
+
+.search, #nameAshop {
+    display: flex;
+    align-items: center;
+}
+
+#loupe {
+    width: 30px;
+    height: 30px;
+    margin: 0 1.5% 0 5%;
+}
+
+.input {
+    background-color: rgb(255, 244, 244);
+    height: 100%;
+    width: 85%;
+    border-radius: 50px 0 50px 50px;
+    border: 0;
+    box-shadow: 0px 0px 8px rgb(253, 0, 0);
+    padding: 0 25px 0 20px;
+    font-size: 15px;
+}
+
+#nameAshop {
+    color: rgb(0, 0, 0);
+    margin-left: 3%;
+    width: 140px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.header, .functions a, .functions button {
+    height: 30px;
+    width: 30px;
+    margin: 0 3% 0 0;
+}
+
+.functions {
+    width: 23%;
+    margin-right: 3%;
+    text-align: end;
+}
+.functions button {
+    border: none;
+    background-color: white;
+   padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    margin: 3% 5%;
+}
+
+footer {
+    background-color: rgb(32, 32, 32);
+    height: 250px;
+    width: 100%;
+    text-align: center;
+    margin: 70px 0 0 0;
+    padding: 25px;
+    box-shadow: 0 0 20px 4px black;
+}
+
+footer h2 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.footer {
+    height: 25px;
+    width: 25px;
+    margin: 0 8px 0 0;
+}
+
+.social_network, .contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.social_network a, .contact a {
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.we_in_social_network h3, .contact_with_us h3 {
+    color: white;
+    font-size: 20px;
+    margin: 20px 0 5px 0;
+    padding: 0;
+    font-weight: 600;
+}

@@ -1,0 +1,61 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.card {
+    cursor: default;
+    height: 290px; width: 170px;
+    box-shadow: 1.5px 1.5px 6px rgb(141, 0, 0);
+    border-radius: 12px 12px 5px 5px;
+}
+.card #Photo {
+    height: 200px; width: 170px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+.ProductPhoto
+{
+    display: flex;
+}
+.card #favourites {
+    margin: 0% 0 0 -30%;
+    height: 45px;
+    width: 45px;
+    cursor: pointer;
+}
+.Text *
+{
+    margin: 0% 6%; padding: 0;
+}
+.cost
+{
+    margin-top: 4.5%;
+    font-size: 25px;
+    color: rgb(168, 0, 0);
+}
+.name
+{
+    font-weight: normal;
+}
+.reviews {
+    display: flex;
+    margin: 3% 0;
+}
+.reviews_card_heart, .reviews_card_comment
+{
+    margin-right: 2%;
+}
+.reviews_card_heart
+{
+    height: 18px; width: 18px;
+}
+.reviews_card_comment
+{
+    height: 16.5px; width: 16.5px;
+}
+.text_reviews_card
+{
+    margin: 0 3% 0  0; padding: 0;
+}

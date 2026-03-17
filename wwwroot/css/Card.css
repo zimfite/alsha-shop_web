@@ -1,0 +1,270 @@
+﻿section {
+    margin: 3% 5%;
+}
+
+.above {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: start;
+}
+
+.img-product_Card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.img-product {
+    display: flex;
+    gap: 15px;
+}
+
+.mini-img {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .mini-img img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+        .mini-img img:hover {
+            border-color: rgb(141, 0, 0);
+            transform: scale(1.05);
+        }
+
+.img-product .selected {
+    flex: 1;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 1.5px 1.5px 8px rgba(141, 0, 0, 0.3);
+}
+
+.feedback button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    border: 1px solid rgb(141, 0, 0);
+    border-radius: 8px;
+    color: rgb(141, 0, 0);
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .feedback button:hover {
+        background-color: rgb(255, 244, 244);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(141, 0, 0, 0.2);
+    }
+
+    .feedback button img {
+        width: 22px;
+        height: 22px;
+    }
+
+.text-specifications {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2px;
+    padding: 20px 20px 13px 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .text-specifications h3 {
+        font-size: 28px;
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .text-specifications h5 {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        margin: 0 0 10px 0;
+        color: #666;
+        font-weight: 500;
+    }
+
+        .text-specifications h5 img {
+            width: 20px;
+            height: 20px;
+        }
+
+    .text-specifications h4, .text-specifications a {
+        font-size: 16px;
+        margin: 8px 0;
+        color: #444;
+        font-weight: normal;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #eee;
+    }
+
+        .text-specifications a {
+            border-bottom: none;
+            margin-bottom: 0; padding: 0;
+            font-weight: 600;
+        }
+
+.interaction {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.interaction_with_product {
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .interaction_with_product h2 {
+        font-size: 36px;
+        color: rgb(168, 0, 0);
+        margin: 10px 0 20px 0;
+        font-weight: bold;
+        text-align: center;
+    }
+
+.departure_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+    .departure_buttons button {
+        width: 100%;
+        padding: 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .departure_buttons button:first-child {
+            background-color: rgb(141, 0, 0);
+            color: white;
+        }
+
+            .departure_buttons button:first-child:hover {
+                background-color: rgb(120, 0, 0);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(141, 0, 0, 0.3);
+            }
+
+        .departure_buttons button:last-child {
+            background-color: white;
+            color: rgb(141, 0, 0);
+            border: 2px solid rgb(141, 0, 0);
+        }
+
+            .departure_buttons button:last-child:hover {
+                background-color: rgb(255, 244, 244);
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(141, 0, 0, 0.2);
+            }
+
+.brenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .brenda img {
+        width: 53px;
+        height: 53px;
+        object-fit: cover;
+    }
+
+    .brenda h3 {
+        font-size: 22px;
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+    }
+
+    .brenda h5 {
+        font-size: 16px;
+        margin: 0;
+        color: #666;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+.below {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+    .below h2 {
+        font-size: 30px;
+        margin: 0 0 20px 0;
+    }
+
+    .below h3 {
+        font-size: 20px;
+        margin: 15px 0;
+        color: #333;
+        font-weight: normal;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+        .below h3:last-child {
+            border-bottom: none;
+            padding: 0; margin-bottom: 0;
+        }
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .above {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .img-product_Card {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .text-specifications {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .interaction {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
